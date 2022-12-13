@@ -43,13 +43,13 @@ public class Vendedores {
 				double valorTotalDaCompra = valorDoProduto*quantidadeDoProduto;
 				System.out.println("COMPRA CONFIRMADA NO VALOR DE " + valorTotalDaCompra);
 				
-				if(id == "001") {
+				if(id.equals("001")) {
 					totalVendido[0] += valorTotalDaCompra;
 				}
-				if(id == "002") {
+				if(id.equals("002")) {
 					totalVendido[1] += valorTotalDaCompra;
 				}
-				if(id == "003") {
+				if(id.equals("003")) {
 					totalVendido[2] += valorTotalDaCompra;
 				}
 			}
@@ -113,6 +113,47 @@ public class Vendedores {
 		System.out.println("--------------------------------");
 	}
 	/**************************************************************************************/
+	
+	
+	/**************************************************************************************/
+	public void metodosDisponiveis() {
+		
+		for(;;) {
+			System.out.println();
+			System.out.println("DIGITE O NÚMERO PARA SER LEVADO A AREA CORRESPONDENTE");
+			System.out.println("--> 1- Venda Realizada");
+			System.out.println("--> 2- Relatorio");
+			System.out.println("--> 3- Vendedores");
+			System.out.println("--> 4- Sair do sistema");
+			
+			int resposta = ler.nextInt();
+			
+			if(resposta == 1) {
+				System.out.println();
+				vendaRealizada();
+			}
+			if(resposta == 2) {
+				System.out.println();
+				vendedores();
+			}
+			if(resposta == 3) {
+				System.out.println();
+				relatorio();
+			}
+			if(resposta == 4) {
+				break;
+			}
+			if(resposta != 1 & resposta != 2 & resposta != 3 & resposta != 4) {
+				System.out.println();
+				System.out.println("O valor digitado não corresponde aos valores acima");
+				System.out.println();
+				System.out.println("DIGITE O NÚMERO PARA SER LEVADO A AREA CORRESPONDENTE");
+			}
+		}
+
+	}
+	/**************************************************************************************/
+	
 	
 	/*****************GETTERS AND SETTERS*****************/
 	public String[] getId() {
